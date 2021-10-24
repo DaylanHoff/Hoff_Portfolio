@@ -354,7 +354,7 @@ html {
   height: 40px !important;
   text-align: center !important;
   font-size: 1.2em !important;
-  line-height: 43px !important;
+  line-height: 2em !important;
   background: rgba(255, 255, 255, 0.972) !important;
   border-radius: 50% !important;
   transition: 0.5s !important;
@@ -546,9 +546,11 @@ html {
   color: white !important;
 }
 
+
 .tech-icons {
   font-size: 4.5em !important;
   margin: 15px !important;
+  padding: 10px !important;
   opacity: 0.93 !important;
   border: 1.7px solid rgba(200, 137, 230, 0.637) !important;
   vertical-align: middle !important;
@@ -593,9 +595,11 @@ html {
     padding-top: 0 !important;
   }
 }
+
 /* --------- */
 /* Resume */
 /* --------- */
+
 .resume-section {
   position: relative !important;
   padding-top: 110px !important;
@@ -605,8 +609,9 @@ html {
 }
 
 .resume {
-  padding-top: 10px;
+  padding-top: 50px;
   padding-bottom: 50px;
+  justify-content: center;
 }
 
 .resume-left {

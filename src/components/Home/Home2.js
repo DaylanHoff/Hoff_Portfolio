@@ -1,13 +1,28 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
+import Tilt from "react-parallax-tilt";
+import Techstack from "../Techstack_short";
 import "../../style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Tilt from "react-parallax-tilt";
+import {
+  AiFillGithub,
+  AiOutlineTwitter,
+  AiFillYoutube,
+} from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
   return (
     <Container fluid className="home-about-section" id="about">
+      <Container fluid className="about-section">
+        <h1 className="project-heading">
+            Note Worthy <strong className="purple">Skillsets </strong>
+        </h1>
+        <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+          <Techstack/>
+        </Row>
+      </Container>
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
@@ -18,8 +33,7 @@ function Home2() {
               I am a simple person that grew up in 
               <b className="purple"> Salt Lake City, Utah</b>
               , though durring high school I moved around a good amount.
-              I ended up graduating high school at a small town in Massachusetts where I enlisted in the 
-              <b className="purple"> Marine Corps</b>, however before my ship date I suffered a nasty knee injury and chose to move back home to Salt Lake City. That's where I am working for a
+              I ended up graduating high school at a small town in Massachusetts after moving around a lot in highschool. Eventualy I chose to move back home to Salt Lake City. That's where I achieved a
               <b className="purple"> Computer Science Degree </b> at
               <i>
                 <a href="www.neumont.edu"><b className="purple"> Neumont </b></a>
@@ -29,9 +43,7 @@ function Home2() {
             In my free time I enjoy working on other projects and visiting friends. However, latley I have enjoyed working out, and reading a good book. I used to play 
             <b className="purple"> hockey </b> 
             a lot before I started college, but now I am more into 
-            <b className="purple"> cross fit </b>
-            and
-            <b className="purple"> weightlifting</b>. Otherwise, I will try to spend time with my small family of 2 little sisters and a little brother who are 12+ years younger than me.
+            <b className="purple"> weightlifting</b>. Otherwise, I will try to spend time with my small family in St. George.
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -42,6 +54,7 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
+          <h1>Connect With Me</h1>
             <p>
               Feel free to <span className="purple">connect </span>with me
             </p>
@@ -53,27 +66,7 @@ function Home2() {
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
                 >
-                  <i className="fab fa-github"></i>
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://twitter.com/Gobstys"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <i className="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                href="https://www.linkedin.com/in/daylan-hoff-16747013b/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <i className="fab fa-linkedin-in"></i>
+                  <AiFillGithub />
                 </a>
               </li>
               <li className="social-icons">
@@ -81,9 +74,19 @@ function Home2() {
                   href="https://www.youtube.com/channel/UCi-cpZ_fAX4-QqADvUm3nxg"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
+                  className="icon-colour  home-social-icons"
                 >
-                  <i className="fab fa-youtube"></i>
+                  <AiFillYoutube />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href="https://www.linkedin.com/in/daylan-hoff-16747013b"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour  home-social-icons"
+                >
+                  <FaLinkedinIn />
                 </a>
               </li>
             </ul>
