@@ -603,13 +603,13 @@ header .navbar ul li a:hover {
 /* skills media queries ends*/
 /* skills section ends */
 
-/* educateion section starts */
-.educateion {
+/* education section starts */
+.education {
   background: #e5ecfb;
   min-height: 80vh;
 }
 
-.educateion .qoute {
+.education .qoute {
   font-size: 1.5rem;
   text-align: center;
   font-family: "Nunito", sans-serif;
@@ -617,7 +617,7 @@ header .navbar ul li a:hover {
   margin-top: 0.5rem;
 }
 
-.educateion .box-container {
+.education .box-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -625,7 +625,7 @@ header .navbar ul li a:hover {
   flex-direction: column;
 }
 
-.educateion .box-container .box {
+.education .box-container .box {
   display: flex;
   flex-direction: row;
   width: 80%;
@@ -639,24 +639,24 @@ header .navbar ul li a:hover {
   background: rgb(252, 252, 252);
 }
 
-.educateion .box-container .box:hover {
+.education .box-container .box:hover {
   transform: scale(1.03);
   box-shadow: 1rem 0.5rem 1.2rem rgba(0, 0, 0, 0.3);
 }
 
-.educateion .box-container .box .image {
+.education .box-container .box .image {
   flex: 1 1 20rem;
   width: 100%;
 }
 
-.educateion .box-container .box img {
+.education .box-container .box img {
   object-fit: cover;
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.educateion .box-container .box .content {
+.education .box-container .box .content {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -665,7 +665,7 @@ header .navbar ul li a:hover {
   flex: 1 1 70rem;
 }
 
-.educateion .box-container .box .content h3 {
+.education .box-container .box .content h3 {
   font-size: 2.5rem;
   color: #012970;
   padding: 0.5rem 0;
@@ -674,13 +674,13 @@ header .navbar ul li a:hover {
   margin-left: 1rem;
 }
 
-.educateion .box-container .box .content p {
+.education .box-container .box .content p {
   font-size: 1.5rem;
   margin-left: 1rem;
   text-align: left;
 }
 
-.educateion h4 {
+.education h4 {
   font-size: 2rem;
   color: rgb(34, 109, 0);
   text-align: left;
@@ -689,23 +689,23 @@ header .navbar ul li a:hover {
   font-weight: 700;
 }
 
-/* educateion media queries starts*/
+/* education media queries starts*/
 @media screen and (max-width: 600px) {
-  .educateion .box-container .box {
+  .education .box-container .box {
     flex-direction: column;
     width: 100%;
   }
 
-  .educateion .box-container .box .image {
+  .education .box-container .box .image {
     width: 100%;
     height: 25rem;
   }
 
-  .educateion .box-container .box img {
+  .education .box-container .box img {
     width: 100%;
   }
 
-  .educateion .box-container .box .content {
+  .education .box-container .box .content {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -714,7 +714,7 @@ header .navbar ul li a:hover {
     flex: 0;
   }
 
-  .educateion .btns {
+  .education .btns {
     margin-top: 2rem;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -722,8 +722,8 @@ header .navbar ul li a:hover {
   }
 }
 
-/* educateion media queries ends*/
-/* educateion section ends */
+/* education media queries ends*/
+/* education section ends */
 
 
 /* Resume section starts */
@@ -776,29 +776,29 @@ header .navbar ul li a:hover {
 /* Resume section ends */
 
 
-/* work section starts */
-.work {
+/* projects section starts */
+.projects {
   /* background: #010124; */
   background: linear-gradient(to bottom, #000031, #00002c);
 }
 
-.work h2 {
+.projects h2 {
   color: #fff;
   padding: 1rem;
 }
 
-.work .heading span {
+.projects .heading span {
   color: rgb(255, 230, 0);
 }
 
-.work .box-container {
+.projects .box-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   margin: 2rem;
 }
 
-.work .box-container .box {
+.projects .box-container .box {
   flex: 1 1 30rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
@@ -807,13 +807,13 @@ header .navbar ul li a:hover {
   height: 30rem;
 }
 
-.work .box-container .box img {
+.projects .box-container .box img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-.work .box-container .box .content {
+.projects .box-container .box .content {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -824,7 +824,7 @@ header .navbar ul li a:hover {
   flex-direction: column;
 }
 
-.work .box-container .box .content .tag {
+.projects .box-container .box .content .tag {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -835,33 +835,33 @@ header .navbar ul li a:hover {
   background: #ffd900;
 }
 
-.work .box-container .box .content .tag h3 {
+.projects .box-container .box .content .tag h3 {
   font-size: 2rem;
 }
 
-.work .box-container .box:hover .content {
+.projects .box-container .box:hover .content {
   top: 25%;
 }
 
-.work .desc {
+.projects .desc {
   margin: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.work .desc p {
+.projects .desc p {
   font-size: 1.5rem;
 }
 
-.work .desc .btns {
+.projects .desc .btns {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 2rem;
 }
 
-.work .desc .btns .btn {
+.projects .desc .btns .btn {
   line-height: 0;
   display: inline;
   padding: 1.5rem 2.5rem;
@@ -872,16 +872,16 @@ header .navbar ul li a:hover {
   margin-right: 2rem;
 }
 
-.work .desc .btns .btn:hover {
+.projects .desc .btns .btn:hover {
   background: #310ae0f5;
 }
 
-.work .viewall {
+.projects .viewall {
   display: flex;
   justify-content: center;
 }
 
-.work .viewall .btn {
+.projects .viewall .btn {
   position: relative;
   line-height: 0;
   padding: 1.6rem 3rem;
@@ -894,28 +894,28 @@ header .navbar ul li a:hover {
   text-align: center;
 }
 
-.work .viewall .btn span {
+.projects .viewall .btn span {
   font-weight: 600;
   font-size: 1.7rem;
   font-family: "Nunito", sans-serif;
 }
 
-.work .viewall .btn i {
+.projects .viewall .btn i {
   margin-left: 0.3rem;
   font-size: 1.5rem;
   transition: 0.3s;
 }
 
-.work .viewall .btn:hover {
+.projects .viewall .btn:hover {
   background: #fff;
   color: #000;
 }
 
-.work .viewall .btn:hover i {
+.projects .viewall .btn:hover i {
   transform: translateX(5px);
 }
 
-/* work section ends */
+/* projects section ends */
 
 /* experience section starts */
 .experience {
