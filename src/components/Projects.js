@@ -3,7 +3,7 @@ import '../styles/projects.scss';
 import oldportfolio from '../assets/images/projects/OldPortfolio.png';
 import portfolio from '../assets/images/projects/portfolio.png';
 import art from '../assets/images/projects/art.png';
-import dahtools from '../assets/images/projects/DAHTOOLS.png';
+import dahtools from '../assets/images/projects/dahtools-login.png';
 import RPSBot from '../assets/images/projects/RPSBot.png';
 import StartMeUp from '../assets/images/projects/StartMeUp.png';
 
