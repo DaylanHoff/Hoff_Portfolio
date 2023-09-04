@@ -24,7 +24,7 @@ jobs:
         aws-region: us-west-2
 
     - name: Syncing Objects in S3
-      uses: hoff/s3-sync-action@master
+      uses: DaylanHoff/s3-sync-action@master
       with:
         args: --follow-symlinks --delete
       env:
