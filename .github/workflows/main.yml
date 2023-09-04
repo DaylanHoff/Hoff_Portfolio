@@ -13,6 +13,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Debug environment
+        run: |
+          echo "AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}"
+          echo "AWS_CREDENTIALS: ${{ steps.assume_role.outputs.AWS_CREDENTIALS }}"
+          env
+
       - name: Set up AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
