@@ -1,50 +1,52 @@
-name: Deploy Portfolio
-on:
-  push:
-    branches: 
-      - main
+name: hoff-portfolio-prod - Deploy to S3.yaml
+
+on: workflow_dispatch
 
 jobs:
-
   build:
-
-    name: Portfolio Production
+    name: hoff-portfolio-prod
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check out code
+        uses: actions/checkout@v3
 
-    - name: Check out code
-      uses: actions/checkout@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.x"
 
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1-node16
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-west-2
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Syncing Objects in S3
-      uses: DaylanHoff/s3-sync-action@master
-      with:
-        args: --follow-symlinks --delete
-      env:
-        SOURCE_DIR: /
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PROD }}
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Install Framework
+        run: npm install -g gatsby-cli
 
-    - name: Invalidate AWS CloudFront
-      uses: chetan/invalidate-cloudfront-action@v2
-      env:
-        DISTRIBUTION: ${{ secrets.DISTRIBUTION_PROD }}
-        PATHS: "/*"
-        AWS_REGION: "us-west-2"
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Build gatsby App
+        run: gatsby build
 
-    - name: Purge cache on Cloudflare
-      uses: jakejarvis/cloudflare-purge-action@master
-      env:
-        CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1-node16
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
 
-        CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
+      - name: Syncing Objects in S3
+        uses: DaylanHoff/s3-sync-action@master
+        with:
+          args: --follow-symlinks --delete
+        env:
+          SOURCE_DIR: dist/
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_ADMIN_DEV }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Invalidate AWS CloudFront
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ secrets.DISTRIBUTION_ADMIN_DEV }}
+          PATHS: "/*"
+          AWS_REGION: "us-east-1"
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
