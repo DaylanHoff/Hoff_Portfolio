@@ -1,57 +1,50 @@
-name: Deploy to S3 Bucket
-
+name: Deploy Portfolio
 on:
   push:
-    branches:
+    branches: 
       - main
 
 jobs:
-  deploy:
+
+  build:
+
+    name: Portfolio Production
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
 
-      - name: Debug environment
-        run: |
-          echo "AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}"
-          echo "AWS_CREDENTIALS: ${{ steps.assume_role.outputs.AWS_CREDENTIALS }}"
-          env
+    - name: Check out code
+      uses: actions/checkout@v3
 
-      - name: Set up AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: us-west-2
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1-node16
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
 
-      - name: Assume Role
-        id: assume_role
-        run: echo "::set-output name=AWS_CREDENTIALS::$(aws sts assume-role --role-arn ${{ secrets.AWS_ROLE_ARN }} --role-session-name GitHubActions)"
+    - name: Syncing Objects in S3
+      uses: caneye/s3-sync-action@master
+      with:
+        args: --follow-symlinks --delete
+      env:
+        SOURCE_DIR: landing-page/
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PROD }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: Install Node.js and npm
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+    - name: Invalidate AWS CloudFront
+      uses: chetan/invalidate-cloudfront-action@v2
+      env:
+        DISTRIBUTION: ${{ secrets.DISTRIBUTION_PROD }}
+        PATHS: "/*"
+        AWS_REGION: "us-east-1"
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: Install Gatsby CLI
-        run: npm install -g gatsby-cli
+    - name: Purge cache on Cloudflare
+      uses: jakejarvis/cloudflare-purge-action@master
+      env:
+        CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
 
-      - name: Fetch GitHub Actions IP ranges
-        run: |
-          wget https://api.github.com/meta
-          cat meta | jq -r '.actions[].cidr_blocks[]' > github_actions_ip_ranges.txt
-
-      - name: Update IAM policy with GitHub Actions IP ranges
-        run: |
-          powershell -ExecutionPolicy Bypass -File Update-IAMPolicy.ps1
-
-      - name: Install project dependencies
-        run: npm install
-
-      - name: Build Gatsby project
-        run: gatsby build
-
-      - name: Upload to S3 bucket
-        run: |
-          aws s3 sync public/ s3://hoff-portfolio
+        CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
