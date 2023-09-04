@@ -19,6 +19,10 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: us-west-2
 
+      - name: Assume Role
+        id: assume_role
+        run: echo "::set-output name=AWS_CREDENTIALS::$(aws sts assume-role --role-arn ${{ secrets.AWS_ROLE_ARN }} --role-session-name GitHubActions)"
+
       - name: Install Node.js and npm
         uses: actions/setup-node@v2
         with:
