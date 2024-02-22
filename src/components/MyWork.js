@@ -81,10 +81,11 @@ const MyWork = () => {
           </div>
         </div>
       </div>
+      <div className="center">
+      <a href="https://github.com/DaylanHoff/resume/blob/main/Daylan_Hoff_Resume.pdf" target="_blank" class="button" rel="noopener noreferrer">View Resume</a>
     </div>
-    <div className="center">
-      <Button href="https://github.com/DaylanHoff/resume/blob/main/Daylan_Hoff_Resume.pdf" target="_blank"label="View Resume"></Button>
     </div>
+
   </section>
   );
 };

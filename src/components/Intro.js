@@ -34,7 +34,7 @@ const Intro = () => {
             </ul>
           </div>
           <div className="scroll-button">
-          <Button  onClick={scrollToAboutMe} label="Learn More" />
+          <Button onClick={scrollToAboutMe} label="Learn More" />
           </div>
         </div>
       </div>
