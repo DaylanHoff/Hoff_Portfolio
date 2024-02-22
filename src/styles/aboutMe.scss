@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
+    height: 110vh; 
     padding: 0 20px;
 
     .about-content {
@@ -19,6 +19,7 @@
         width: 200px; 
         height: auto; 
         margin-bottom: 20px;
+        border-radius: 15px;
       }
 
       .AboutTitle {
@@ -50,6 +51,7 @@
           width: 300px;
           margin-right: 20px;
           margin-bottom: 0;
+          border-radius: 15px;
         }
       }
     }
