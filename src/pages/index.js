@@ -13,7 +13,7 @@ const HomePage = () => {
     <Layout>
       <Intro />
       <AboutMe />
-      <Resume/>
+      {/* <Resume/> */}
       <MyWork />
       {/* <Projects /> */}
       {/* <GetInTouch /> */}

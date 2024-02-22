@@ -20,13 +20,11 @@ const Intro = () => {
           </div>
         </Tilt>
         <div className="intro-container">
-
           <h1 className="intro-text">
             <div className="top">Hi, my name is <span className="text-color-main">Daylan Hoff</span></div>
             <div className="bottom">Technology Leader and Entrepreneur</div>
           </h1>
-          <p className="description"></p>
-          <Button  onClick={scrollToAboutMe} label="Learn More" />
+
           <div class="socials">
             <ul class="social-icons">
               <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/DaylanHoff/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
@@ -34,6 +32,9 @@ const Intro = () => {
               <li><a class="twitter" aria-label="Twitter" href="https://twitter.com/Daylan_Hoff" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
               <li><a class="youtube" aria-label="Youtube" href="https://www.youtube.com/channel/UCi-cpZ_fAX4-QqADvUm3nxg"target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
             </ul>
+          </div>
+          <div className="scroll-button">
+          <Button  onClick={scrollToAboutMe} label="Learn More" />
           </div>
         </div>
       </div>

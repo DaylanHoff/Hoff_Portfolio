@@ -49,16 +49,12 @@
 }
 
 .intro {
-  /* Remove width: 100%; and margin-left: auto; */
   text-align: center;
   background-color: white !important;
-  /* Remove width: 100%; */
-  height: 100vh; /* Take up the full viewport height */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Remove margin-left: auto; */
-  /* Add overflow: hidden; to prevent horizontal scrolling */
   overflow: hidden;
 }
 
@@ -99,6 +95,7 @@ Button {
   font-size: 1rem;
   cursor: pointer;
   animation: slideInFromBottom 1.8s ease;
+
 }
 
 Button:hover {

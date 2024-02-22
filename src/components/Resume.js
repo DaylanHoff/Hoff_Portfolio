@@ -11,7 +11,7 @@ const Resume = () => {
               <img
                 draggable="false"
                 src="https://github.com/DaylanHoff/resume/blob/main/resume.png?raw=true"
-                alt=""
+                alt="Resume"
               />
             </a>
           </div>

@@ -1,15 +1,14 @@
 import React from 'react';
 import '../styles/myWork.scss';
-
+import Button from '../components/Button';
 const MyWork = () => {
+
   return (
   <section class="experience" id="experience">
       <div className="title">
       <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
       </div>
-    
-
-    <div class="timeline">
+     <div class="timeline">
 
       <div class="container right">
         <div class="content">
@@ -82,6 +81,9 @@ const MyWork = () => {
           </div>
         </div>
       </div>
+    </div>
+    <div className="center">
+      <Button href="https://github.com/DaylanHoff/resume/blob/main/Daylan_Hoff_Resume.pdf" target="_blank"label="View Resume"></Button>
     </div>
   </section>
   );

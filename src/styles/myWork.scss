@@ -16,6 +16,10 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
 }
+.center {
+  text-align: center;
+  
+}
 
 .heading {
   font-size: 3.5rem;
@@ -156,8 +160,6 @@ html {
 .experience .content .desc p {
   font-size: 1.2rem;
 }
-
-
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
