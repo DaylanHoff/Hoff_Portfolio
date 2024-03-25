@@ -11,6 +11,7 @@ import GetInTouch from '../components/GetInTouch';
 const HomePage = () => {
   return (
     <Layout>
+      <title>Hoff's Portfolio</title>
       <Intro />
       <AboutMe />
       {/* <Resume/> */}
