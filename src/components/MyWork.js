@@ -17,7 +17,7 @@ const MyWork = () => {
           </div>
           <div class="desc">
             <h3>Release / DevOps Engineer</h3>
-            <p>March 2022 - Present</p>
+            <p>Present</p>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@ const MyWork = () => {
           </div>
           <div class="desc">
             <h3>Co-Founder</h3>
-            <p>February 2022 - Present</p>
+            <p>February 2022 - January 2024</p>
           </div>
         </div>
       </div>
