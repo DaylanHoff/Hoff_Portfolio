@@ -17,7 +17,7 @@ const MyWork = () => {
           </div>
           <div class="desc">
             <h3>Release / DevOps Engineer</h3>
-            <p>Present</p>
+            <p>Current</p>
           </div>
         </div>
       </div>
