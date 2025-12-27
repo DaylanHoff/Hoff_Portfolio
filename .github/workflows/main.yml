@@ -1,4 +1,4 @@
-name: hoff-portfolio-prod - Deploy to S3.yaml
+name: hoff-portfolio-prod - Deploy to S3
 
 on:
   push:
@@ -21,11 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Framework
-        run: npm install -g gatsby-cli
-
-      - name: Build gatsby App
-        run: gatsby build
+      - name: Build Next.js App
+        run: npm run build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1-node16
@@ -39,7 +36,7 @@ jobs:
         with:
           args: --follow-symlinks --delete
         env:
-          SOURCE_DIR: ./public
+          SOURCE_DIR: ./out
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_PORTFOLIO_PROD }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

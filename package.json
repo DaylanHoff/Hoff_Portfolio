@@ -1,30 +1,36 @@
 {
-  "name": "Hoff_Portfolio",
-  "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "name": "hoff-portfolio",
   "version": "0.1.0",
-  "license": "0BSD",
+  "private": true,
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "gatsby": "^5.12.3",
-    "gatsby-plugin-react-helmet": "^6.12.0",
-    "gatsby-plugin-sass": "^6.12.0",
-    "react": "^18.2.0",
-    "react-helmet": "^6.1.0",
-    "react-tilt": "^1.0.2"
+    "@radix-ui/react-slot": "^1.2.4",
+    "autoprefixer": "^10.4.23",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.26",
+    "lucide-react": "^0.562.0",
+    "next": "^15.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "recharts": "^3.6.0",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/DaylanHoff/Hoff_Portfolio"
-  },
-  "bugs": {
-    "url": "https://github.com/DaylanHoff/Hoff_Portfolio/issues"
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "^15.1.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
