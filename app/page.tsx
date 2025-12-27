@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900" aria-label="Hero section">
         <div className="absolute inset-0 bg-grid-slate-200 dark:bg-grid-slate-800 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.5))] dark:[mask-image:linear-gradient(0deg,black,rgba(0,0,0,0.5))]" />
         <div className="container relative mx-auto px-4 py-24 md:py-32">
           <motion.div
@@ -75,11 +75,11 @@ export default function Home() {
       </section>
 
       {/* Passion Projects */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background" aria-labelledby="passion-projects-heading">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Passion Projects</h2>
+              <h2 id="passion-projects-heading" className="text-3xl md:text-4xl font-bold mb-4">Passion Projects</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 All of my projects share a common foundation: <span className="font-semibold text-foreground">privacy-first design</span>. 
                 I believe technology should empower users while respecting their fundamental right to privacy.
@@ -132,10 +132,10 @@ export default function Home() {
 
 
       {/* AWS Architecture Diagram */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background" aria-labelledby="hosting-heading">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">How This Site's Hosted</h2>
+            <h2 id="hosting-heading" className="text-3xl md:text-4xl font-bold mb-4 text-center">How This Site's Hosted</h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               Automated deployment pipelines using AWS S3, CloudFront, and GitHub Actions
             </p>
@@ -145,10 +145,10 @@ export default function Home() {
       </section>
 
       {/* Privacy Architecture */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-20 bg-muted/50" aria-labelledby="privacy-heading">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Privacy-First Engineering</h2>
+            <h2 id="privacy-heading" className="text-3xl md:text-4xl font-bold mb-4 text-center">Privacy-First Engineering</h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               Building secure applications with C#, .NET, and privacy-by-design principles
             </p>
@@ -159,10 +159,10 @@ export default function Home() {
 
 
       {/* Interactive Timeline */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background" aria-labelledby="journey-heading">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Professional Journey</h2>
+            <h2 id="journey-heading" className="text-3xl md:text-4xl font-bold mb-4 text-center">Professional Journey</h2>
             <p className="text-center text-muted-foreground mb-12">
               Click on any milestone to explore my career path and education
             </p>
