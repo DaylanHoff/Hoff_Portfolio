@@ -90,7 +90,7 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className={inter.className}>
-        <ThemeProvider defaultTheme="system" storageKey="portfolio-theme">
+        <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
           {children}
         </ThemeProvider>
       </body>
