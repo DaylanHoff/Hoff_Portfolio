@@ -117,22 +117,6 @@ export function PrivacyArchitecture() {
             </motion.div>
           </div>
         </div>
-
-        <div className="bg-muted p-4 rounded-lg">
-          <h4 className="font-semibold mb-2 text-sm">Technologies Used</h4>
-          <div className="flex flex-wrap gap-2">
-            {["C#", ".NET Core", "AES-256", "RSA Encryption", "HTTPS/TLS", "Secure Storage"].map(
-              (tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-background rounded-full text-xs font-medium border"
-                >
-                  {tech}
-                </span>
-              )
-            )}
-          </div>
-        </div>
       </CardContent>
     </Card>
   );
