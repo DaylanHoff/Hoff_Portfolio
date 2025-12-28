@@ -28,12 +28,12 @@ export function InteractiveTimeline({ experiences }: InteractiveTimelineProps) {
   return (
     <div className="relative">
       {/* Timeline visualization */}
-      <div className="flex items-center justify-center mb-12 relative">
+      <div className="flex items-center justify-center mb-12 relative overflow-x-auto md:overflow-x-visible pb-4">
         {/* Timeline line */}
         <div className="absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-purple-300 to-blue-200 dark:from-blue-900 dark:via-purple-900 dark:to-blue-900" />
         
         {/* Year markers */}
-        <div className="relative flex justify-between w-full max-w-5xl px-4">
+        <div className="relative flex justify-between w-full max-w-5xl px-4 min-w-[800px] md:min-w-0">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
@@ -45,7 +45,7 @@ export function InteractiveTimeline({ experiences }: InteractiveTimelineProps) {
             >
               {/* Timeline node */}
               <motion.div
-                className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg transition-all ${
+                className={`w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center shadow-lg transition-all ${
                   selectedIndex === index
                     ? isEducation(exp.company)
                       ? "bg-gradient-to-br from-amber-500 to-orange-600 ring-4 ring-amber-200 dark:ring-amber-900"
@@ -58,22 +58,22 @@ export function InteractiveTimeline({ experiences }: InteractiveTimelineProps) {
                 whileTap={{ scale: 0.95 }}
               >
                 {isEducation(exp.company) ? (
-                  <GraduationCap className="w-8 h-8 text-white" />
+                  <GraduationCap className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 ) : (
-                  <Briefcase className="w-8 h-8 text-white" />
+                  <Briefcase className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 )}
               </motion.div>
 
               {/* Year label */}
               <div className="mt-3 text-center">
-                <div className="text-sm font-bold">{exp.startYear}</div>
+                <div className="text-xs md:text-sm font-bold">{exp.startYear}</div>
                 {exp.period.includes("Current") && (
-                  <div className="text-xs font-semibold text-primary">Present</div>
+                  <div className="text-[10px] md:text-xs font-semibold text-primary">Present</div>
                 )}
                 {isEducation(exp.company) && (
-                  <div className="text-xs font-semibold text-amber-600 dark:text-amber-400">Graduated 2021</div>
+                  <div className="text-[10px] md:text-xs font-semibold text-amber-600 dark:text-amber-400">Graduated 2021</div>
                 )}
-                <div className="text-xs text-muted-foreground max-w-[100px] mt-1">
+                <div className="text-[10px] md:text-xs text-muted-foreground max-w-[80px] md:max-w-[100px] mt-1">
                   {exp.company}
                 </div>
               </div>
@@ -94,40 +94,41 @@ export function InteractiveTimeline({ experiences }: InteractiveTimelineProps) {
         >
           <Card className="border-2 hover:shadow-2xl transition-shadow">
             <CardHeader>
-              <div className="flex items-start justify-between">
+              <div className="flex flex-col md:flex-row items-start justify-between gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     {isEducation(experiences[selectedIndex].company) ? (
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
-                        <GraduationCap className="w-6 h-6 text-white" />
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+                        <GraduationCap className="w-5 h-5 md:w-6 md:h-6 text-white" />
                       </div>
                     ) : (
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
-                        <Briefcase className="w-6 h-6 text-white" />
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center flex-shrink-0">
+                        <Briefcase className="w-5 h-5 md:w-6 md:h-6 text-white" />
                       </div>
                     )}
                     <div>
-                      <CardTitle className="text-2xl">
+                      <CardTitle className="text-xl md:text-2xl">
                         {experiences[selectedIndex].company}
                       </CardTitle>
-                      <CardDescription className="text-base mt-1">
+                      <CardDescription className="text-sm md:text-base mt-1">
                         {experiences[selectedIndex].role}
                       </CardDescription>
                     </div>
                   </div>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs md:text-sm text-muted-foreground">
                     {experiences[selectedIndex].period}
                   </p>
                 </div>
 
                 {/* Navigation arrows */}
-                <div className="flex gap-2">
+                <div className="flex gap-2 self-end md:self-start">
                   <button
                     onClick={() => setSelectedIndex(Math.max(0, selectedIndex - 1))}
                     disabled={selectedIndex === 0}
                     className="p-2 rounded-lg hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    aria-label="Previous experience"
                   >
-                    <ChevronRight className="w-5 h-5 rotate-180" />
+                    <ChevronRight className="w-4 h-4 md:w-5 md:h-5 rotate-180" />
                   </button>
                   <button
                     onClick={() =>
@@ -135,8 +136,9 @@ export function InteractiveTimeline({ experiences }: InteractiveTimelineProps) {
                     }
                     disabled={selectedIndex === experiences.length - 1}
                     className="p-2 rounded-lg hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    aria-label="Next experience"
                   >
-                    <ChevronRight className="w-5 h-5" />
+                    <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
                   </button>
                 </div>
               </div>

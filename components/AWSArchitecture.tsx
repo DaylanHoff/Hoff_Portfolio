@@ -29,7 +29,7 @@ export function AWSArchitecture() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="relative w-full h-64 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg p-4">
+        <div className="relative w-full h-56 md:h-64 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg p-4 overflow-hidden">
           {/* Connection lines */}
           <svg className="absolute inset-0 w-full h-full">
             {connections.map((conn, index) => {
@@ -70,11 +70,11 @@ export function AWSArchitecture() {
                 whileHover={{ scale: 1.1 }}
               >
                 <div className="relative -translate-x-1/2 -translate-y-1/2">
-                  <div className={`${node.color} p-3 rounded-full text-white shadow-lg`}>
-                    <Icon className="w-6 h-6" />
+                  <div className={`${node.color} p-2 md:p-3 rounded-full text-white shadow-lg`}>
+                    <Icon className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                    <span className="text-xs font-medium bg-background px-2 py-1 rounded shadow-sm border">
+                    <span className="text-[10px] md:text-xs font-medium bg-background px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm border">
                       {node.label}
                     </span>
                   </div>

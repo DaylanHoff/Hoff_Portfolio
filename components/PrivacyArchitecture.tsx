@@ -64,8 +64,9 @@ export function PrivacyArchitecture() {
           })}
         </div>
 
-        <div className="relative bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg p-6">
-          <div className="flex items-center justify-between">
+        <div className="relative bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg p-4 md:p-6">
+          {/* Desktop: Horizontal Layout */}
+          <div className="hidden md:flex items-center justify-between">
             <motion.div
               className="flex flex-col items-center"
               initial={{ x: -50, opacity: 0 }}
@@ -114,6 +115,59 @@ export function PrivacyArchitecture() {
                 <Database className="w-8 h-8" />
               </div>
               <span className="text-sm mt-2 font-medium">Server</span>
+            </motion.div>
+          </div>
+
+          {/* Mobile: Vertical Layout */}
+          <div className="md:hidden flex flex-col items-center gap-4">
+            <motion.div
+              className="flex flex-col items-center"
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="bg-blue-500 p-3 rounded-full text-white">
+                <Eye className="w-6 h-6" />
+              </div>
+              <span className="text-xs mt-2 font-medium">Client</span>
+            </motion.div>
+
+            <motion.div
+              className="border-l-2 border-dashed border-primary h-8"
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            />
+
+            <motion.div
+              className="flex flex-col items-center"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <div className="bg-green-500 p-3 rounded-full text-white">
+                <Lock className="w-6 h-6" />
+              </div>
+              <span className="text-xs mt-2 font-medium">Encryption Layer</span>
+            </motion.div>
+
+            <motion.div
+              className="border-l-2 border-dashed border-primary h-8"
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            />
+
+            <motion.div
+              className="flex flex-col items-center"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 1 }}
+            >
+              <div className="bg-purple-500 p-3 rounded-full text-white">
+                <Database className="w-6 h-6" />
+              </div>
+              <span className="text-xs mt-2 font-medium">Server</span>
             </motion.div>
           </div>
         </div>
