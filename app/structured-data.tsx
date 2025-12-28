@@ -9,7 +9,6 @@ export function StructuredData() {
     sameAs: [
       "https://www.linkedin.com/in/DaylanHoff/",
       "https://github.com/DaylanHoff",
-      "https://twitter.com/Daylan_Hoff",
       "https://www.youtube.com/channel/UCi-cpZ_fAX4-QqADvUm3nxg"
     ],
     knowsAbout: [

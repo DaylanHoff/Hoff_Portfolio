@@ -55,13 +55,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Daylan Hoff - DevOps Engineer & Privacy Advocate",
-    description: "DevOps Engineer specializing in C#/.NET, AWS, and privacy-first application development.",
-    creator: "@Daylan_Hoff",
-    images: ["/og-image.png"],
-  },
   robots: {
     index: true,
     follow: true,

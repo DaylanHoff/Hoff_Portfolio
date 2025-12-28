@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Twitter, Youtube, ExternalLink, Code, Shield, Zap, Cloud, MapPin } from "lucide-react";
+import { Github, Linkedin, Youtube, ExternalLink, Code, Shield, Zap, Cloud, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SkillChart } from "@/components/SkillChart";
@@ -48,11 +48,6 @@ export default function Home() {
               <Button variant="outline" size="icon" asChild>
                 <a href="https://github.com/DaylanHoff" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <Github className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="outline" size="icon" asChild>
-                <a href="https://twitter.com/Daylan_Hoff" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                  <Twitter className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="outline" size="icon" asChild>
