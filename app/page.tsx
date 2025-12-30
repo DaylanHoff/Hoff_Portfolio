@@ -86,7 +86,8 @@ export default function Home() {
                               />
                             ) : (
                               (() => {
-                                const Icon = focusIcons[project.icon as keyof typeof focusIcons];
+                                const iconKey = (project as any).icon as keyof typeof focusIcons;
+                                const Icon = focusIcons[iconKey] || Code;
                                 return (
                                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                                     <Icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
