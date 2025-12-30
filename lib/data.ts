@@ -104,9 +104,9 @@ export const passionProjects = [
     link: "https://concluda.ai",
   },
   {
-    title: "Pinguin",
+    title: "Pinquin",
     description: "The first truly privacy-first location sharing tool, replacing big tech alternatives",
-    icon: "MapPin",
-    link: "https://pinguin.net",
+    image: "/images/pinquin.png",
+    link: "https://pinquin.net",
   },
 ];
