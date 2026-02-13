@@ -4,6 +4,7 @@ export function StructuredData() {
     "@type": "Person",
     name: "Daylan Hoff",
     url: "https://daylanhoff.com",
+    image: "https://daylanhoff.com/images/metadata.png",
     jobTitle: "DevOps Engineer",
     description: "DevOps Engineer specializing in C#/.NET, AWS, and privacy-first application development",
     sameAs: [

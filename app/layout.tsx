@@ -55,12 +55,30 @@ export const metadata: Metadata = {
     description: "DevOps Engineer specializing in C#/.NET, AWS, and privacy-first application development. Building secure, scalable solutions with modern DevOps practices.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://daylanhoff.com/images/metadata.png",
+        secureUrl: "https://daylanhoff.com/images/metadata.png",
         width: 1200,
         height: 630,
         alt: "Daylan Hoff - DevOps Engineer & Privacy Advocate",
+        type: "image/png",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@DaylanHoff",
+    title: "Daylan Hoff - DevOps Engineer & Privacy Advocate",
+    description: "DevOps Engineer specializing in C#/.NET, AWS, and privacy-first application development. Building secure, scalable solutions with modern DevOps practices.",
+    images: [
+      {
+        url: "https://daylanhoff.com/images/metadata.png",
+        alt: "Daylan Hoff - DevOps Engineer & Privacy Advocate",
+      },
+    ],
+    creator: "@DaylanHoff",
+  },
+  other: {
+    "theme-color": "#000000",
   },
   robots: {
     index: true,
