@@ -93,7 +93,7 @@ export const certifications = [
 export const passionProjects = [
   {
     title: "Hofflabs",
-    description: "Privacy-first tool provider for developers to utilize in their applications and workflows",
+    description: "Independent startup company run by me to provide consulting services as well provide and contribute to open source projects.",
     image: "/images/hofflabs.png",
     link: "https://hofflabs.org",
   },
@@ -108,5 +108,11 @@ export const passionProjects = [
     description: "The first truly privacy-first location sharing tool, replacing big tech alternatives",
     image: "/images/pinquin.png",
     link: "https://pinquin.net",
+  },
+  {
+    title: "Raspberry",
+    description: "A fun Steam game where you collect and trade raspberries while battling against the evil bananas",
+    image: "/images/raspberry.png",
+    link: "https://store.steampowered.com/app/3048820/Raspberry/",
   },
 ];

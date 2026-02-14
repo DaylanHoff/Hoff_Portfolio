@@ -1,19 +1,16 @@
 "use client";
 
-import { Github, Linkedin, Youtube, ExternalLink, Code, Shield, Zap, Cloud, MapPin } from "lucide-react";
+import { Github, Linkedin, Youtube, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { SkillChart } from "@/components/SkillChart";
 import { AWSArchitecture } from "@/components/AWSArchitecture";
 import { PrivacyArchitecture } from "@/components/PrivacyArchitecture";
 import { InteractiveTimeline } from "@/components/InteractiveTimeline";
-import { ProjectCard } from "@/components/ProjectCard";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
+import { ProjectCarousel } from "@/components/ProjectCarousel";
 import { experience, passionProjects } from "@/lib/data";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const focusIcons = { Shield, Zap, Cloud, Code, MapPin };
 
   return (
     <main className="min-h-screen">
@@ -64,47 +61,19 @@ export default function Home() {
                 I believe technology should empower users while respecting their fundamental right to privacy.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-              {passionProjects.map((project, index) => {
-                return (
-                  <motion.div
-                    key={project.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="block h-full">
-                      <Card className="h-full hover:shadow-lg transition-all md:hover:scale-105 cursor-pointer active:scale-95">
-                        <CardContent className="pt-5 md:pt-6 pb-5 md:pb-6 text-center space-y-3 md:space-y-4">
-                          <div className="mx-auto w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
-                            {project.image ? (
-                              <img 
-                                src={project.image} 
-                                alt={project.title}
-                                className="w-full h-full object-contain"
-                                style={(project as any).imageScale ? { transform: `scale(${(project as any).imageScale})` } : undefined}
-                              />
-                            ) : (
-                              (() => {
-                                const iconKey = (project as any).icon as keyof typeof focusIcons;
-                                const Icon = focusIcons[iconKey] || Code;
-                                return (
-                                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                                    <Icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-                                  </div>
-                                );
-                              })()
-                            )}
-                          </div>
-                          <h3 className="font-semibold text-base md:text-lg">{project.title}</h3>
-                          <p className="text-xs md:text-sm text-muted-foreground line-clamp-3">{project.description}</p>
-                          <p className="text-[10px] md:text-xs text-primary font-medium truncate">{project.link}</p>
-                        </CardContent>
-                      </Card>
-                    </a>
-                  </motion.div>
-                );
-              })}
+            <ProjectCarousel projects={passionProjects} />
+            
+            {/* GitHub link */}
+            <div className="mt-8 md:mt-12 text-center">
+              <p className="text-sm md:text-base text-muted-foreground mb-4">
+                I have many more projects to explore!
+              </p>
+              <Button variant="outline" size="lg" asChild>
+                <a href="https://github.com/DaylanHoff" target="_blank" rel="noopener noreferrer">
+                  <Github className="mr-2 h-5 w-5" />
+                  View All Projects on GitHub
+                </a>
+              </Button>
             </div>
           </div>
         </div>
